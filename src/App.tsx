@@ -46,7 +46,7 @@ class App extends Component<Readonly<AppProps>, Readonly<AppState>> {
   setPriceInput = (event:ChangeEvent<HTMLInputElement>):void  => this.setState({priceInput: event.currentTarget.value})
   setImageInput = (event:ChangeEvent<HTMLInputElement>):void => this.setState({imageInput: event.currentTarget.value})
   handleAddItem = async ():Promise<void> => {
-    if(!this.state.nameInput || !this.state.confirmationText || !this.state.descriptionInput || !this.state.imageInput)
+    if(!this.state.nameInput || !this.state.confirmationText || !this.state.descriptionInput || !this.state.imageInput) return
     try {
       const item:Item = {
         name: this.state.nameInput,
