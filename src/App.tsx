@@ -62,6 +62,7 @@ class App extends Component<Readonly<AppProps>, Readonly<AppState>> {
         mode:'cors',
         body: JSON.stringify(item)
       })
+      console.log(await res.json())
       this.setState({confirmationText:"Item added"}, () => {
         setTimeout(() => this.setState({confirmationText:""}),3000)
       })
